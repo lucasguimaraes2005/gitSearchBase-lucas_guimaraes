@@ -1,0 +1,36 @@
+.profile__header {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 210px;
+  gap: 20px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile_div p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 29px;
+  color: var(--color-grey-7);
+}
+.profile_div img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .profile__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
