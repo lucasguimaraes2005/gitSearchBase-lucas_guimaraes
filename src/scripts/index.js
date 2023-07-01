@@ -1,6 +1,6 @@
-async function searchGit (gitName) {
+async function searchGit (name) {
 
-    const gitName = await fetch(`https://api.github.com/users/${gitName}`, {
+    const gitName = await fetch(`https://api.github.com/users/${name}`, {
         method: 'GET'
     })
 
@@ -18,5 +18,15 @@ async function searchGit (gitName) {
 }
 
 const handleSearch = () => {
-    
+    const input = document.querySelector('.index__input')
+    const button = document.querySelector('.index__button')
+
+    button.addEventListener('click', () => {
+        const gitName = input.value
+
+        localStorage.setItem('gitName', gitName)
+        searchGit(gitName)
+    })
 }
+
+handleSearch()
