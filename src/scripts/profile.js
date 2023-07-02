@@ -30,7 +30,8 @@ const renderizarRepositorios = async () => {
     })
     .then( async (response) => {
         if (response.ok) {
-            const responseConvert = await response.json()
+            const responseConvert = await response.json();
+            return responseConvert
         } 
     })
 
@@ -53,10 +54,12 @@ const renderizarRepositorios = async () => {
         a.innerText = "Repositório"
 
         a.href = repositorio.html_url
-        a.target_blank
+        a.target = "_blank"
 
         li.append(h4, p, a)
         mainList.append(li)
+
+        return mainList
     })
 }
 
